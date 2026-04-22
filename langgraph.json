@@ -1,7 +1,7 @@
 {
   "node_version": "20",
   "graphs": {
-    "agent": "./index.ts:agent"
+    "DeepAgent": "./index.ts:DeepAgent"
   },
   "env": ".env"
 }

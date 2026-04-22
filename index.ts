@@ -56,7 +56,7 @@ const INSTRUCTIONS = `
     ${SUBAGENT_INSTRUCTIONS}
 `;
 
-export const agent = createAgent({
+export const DeepAgent = createAgent({
     model,
     tools: allTools,
     systemPrompt: INSTRUCTIONS,
