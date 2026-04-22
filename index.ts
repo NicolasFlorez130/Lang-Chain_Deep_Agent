@@ -14,21 +14,21 @@ import { createAgent, DynamicStructuredTool } from 'langchain';
 import { createTaskTool } from './tools/task_tool';
 import { DeepAgentState } from './schemas';
 
-export const model = new ChatGoogle({ model: 'gemini-2.5-flash' });
+export const model = new ChatGoogle({ model: 'gemini-3.1-flash-lite-preview' });
 
 const maxConcurrentResearchUnits = 3;
 const maxResearchIterations = 3;
 
 const subAgentTools = [tavilySearch, think];
 
-const builtInTools = [ls, readFile, writeFile, writeTodos, readTodos, think];
+const builtInTools = [ls, readFile, writeFile, writeTodos, readTodos];
 
 const researchSubAgent: SubAgent = {
     name: 'research-agent',
     description:
         'Delegate research to the sub-agent researcher. Only give this researcher one topic at a time.',
     prompt: RESEARCHER_INSTRUCTIONS(getToday()),
-    tools: ['tavily_search', 'think_tool'],
+    tools: ['tavily_search', 'think'],
 };
 
 const taskTool = await createTaskTool(subAgentTools, [researchSubAgent], model, DeepAgentState);

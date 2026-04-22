@@ -1,24 +1,30 @@
 {
-  "name": "lang-chain_deep_agent",
-  "module": "index.ts",
-  "type": "module",
-  "private": true,
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@types/turndown": "^5.0.6"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
-  },
-  "dependencies": {
-    "@langchain/core": "^1.1.40",
-    "@langchain/google": "^0.1.10",
-    "@langchain/langgraph": "^1.2.9",
-    "@tavily/core": "^0.7.2",
-    "crypto": "^1.0.1",
-    "langchain": "^1.3.3",
-    "path": "^0.12.7",
-    "turndown": "^7.2.4",
-    "zod": "^4.3.6"
-  }
+    "name": "lang-chain_deep_agent",
+    "module": "index.ts",
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "config": "bun create langgraph config",
+        "dev": "bunx @langchain/langgraph-cli dev",
+        "up": "bunx @langchain/langgraph-cli up",
+        "build": "bunx @langchain/langgraph-cli build"
+    },
+    "devDependencies": {
+        "@types/bun": "latest",
+        "@types/turndown": "^5.0.6"
+    },
+    "peerDependencies": {
+        "typescript": "^5"
+    },
+    "dependencies": {
+        "@langchain/core": "^1.1.40",
+        "@langchain/google": "^0.1.10",
+        "@langchain/langgraph": "^1.2.9",
+        "@tavily/core": "^0.7.2",
+        "crypto": "^1.0.1",
+        "langchain": "^1.3.3",
+        "path": "^0.12.7",
+        "turndown": "^7.2.4",
+        "zod": "^4.3.6"
+    }
 }

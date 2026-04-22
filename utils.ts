@@ -30,7 +30,6 @@ export function summarizeWebpageContent(webpageContent: string) {
         const structuredModel = model.withStructuredOutput(SummarySchema);
 
         return structuredModel.invoke([
-            //uwu
             new SystemMessage(SUMMARIZE_WEB_SEARCH(webpageContent, getToday())),
         ]);
     } catch (error) {
